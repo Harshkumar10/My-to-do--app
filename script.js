@@ -18,6 +18,8 @@ var toDoList = document.getElementById("todo-list");
 function newToDoItem(itemText,completed){
 	var toDoItem = document.createElement("li");
 	var toDoText = document.createTextNode(itemText);
+	//create a text node
+
 	toDoItem.appendChild(toDoText);
 	
 	if(completed){
@@ -75,6 +77,7 @@ function saveList(){
 		toDos.push(toDoInfo);
 	}
 	
+	//Add key and value to localStorage
 	localStorage.setItem("toDos",JSON.stringify(toDos));
 	
 }
