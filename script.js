@@ -61,6 +61,10 @@ function emptyList(){
 	{
 		toDoItems.item(0).remove();
 	}
+
+	//here we also have to clear the local storage so that when we open
+	//next time we get clear list 
+	localStorage.clear();
 }
 
 function saveList(){
@@ -85,6 +89,7 @@ function saveList(){
 
 function loadList(){
 	if(localStorage.getItem("toDos")!=null){
+		//console.log(JSON.parse(localStorage.getItem("toDos")));
 		var toDos = JSON.parse(localStorage.getItem("toDos"));
 		
 		for(var i=0;i<toDos.length;i++){
